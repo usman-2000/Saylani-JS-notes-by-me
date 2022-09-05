@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><readmore class=""></readmore></title>
+</head>
+<body>
+    <p id="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt beatae consequatur ratione est, nihil distinctio error velit quasi itaque libero aperiam natus aliquam quia possimus recusandae voluptatibus dicta eveniet quo quidem dolorem rem reiciendis!</p>
+
+
+    <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. <a href="#" onclick="readMore()">readmore..</a> </p>
+</body>
+
+<script>
+    // function readMore(){
+    //     var text = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione molestias, eaque fuga aperiam ullam quo laudantium nesciunt minus debitis ex esse nemo modi labore, illum suscipit culpa alias vitae, perferendis aut? Voluptatum, vitae eius.";
+    //     var para = document.getElementById('para');
+    //     para.innerHTML = text;
+    // }
+
+    function readMore(){
+        var text = document.getElementById('text').innerHTML;
+        var para = document.getElementById('para');
+
+        // html likhein gay to wo bhi chalay gi hi
+        
+        var list = '<ul><li>1</li><li>2</li><li>3</li><li>4</li></ul>'
+        para.innerHTML = text;
+        para.innerHTML += list;
+
+    }
+    
+</script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fields Events</title>
+</head>
+<body>
+
+    <!-- onfocus : input field pr jab click krengay -->
+    <!-- onblur : jab field sy bahir ayengay ya bahir click krengay -->
+
+    <input type="text" onfocus="document.write('focus')"> <br>
+
+    <!-- CSS mn hm  stlying use krty hain wo change ho jati hai JS mn  text-align:center; -->
+    <!-- JAVASCRIPT mn hm camel case use krty hain jese textAlign = 'center'............is mn hm colon ki jaga equal to ka sign daal dety hain or values ko hameesha string k andr likhty hain -->
+
+    <input type="text" onblur="this.style.backgroundColor='yellow'" onfocus="this.style.backgroundColor='red'"> <br>
+
+
+
+    <!-- READING FIELD VALUES -->
+
+    <br><br>
+    <input type="text" name="" id="name" placeholder="ENTER NAME" onfocus="this.style.backgroundColor='pink';this.style.color = 'white';" onblur="this.style.backgroundColor='yellow'">
+    <input type="text" id="age" placeholder="AGE">
+    <button onclick="getName()">Submit</button><br>
+
+    <p id="para"></p>
+
+</body>
+
+    <script>
+        function getName(){
+            var name = document.getElementById("name");
+            var age = document.getElementById('age');
+            console.log(name.value,age.value);
+            name.value='';
+            age.value='';
+        }
+
+
+        function setName(){
+            let name = document.getElementById('name');
+            name.value ='usman';
+            let para = document.getElementById('para');
+            para.innerHTML = 'USMAN RAHIM IS GREAT MAN IN THE WORLD'
+
+        }
+
+        setName()
+    </script>
+</html>

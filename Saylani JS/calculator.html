@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        #main {
+            width: 400px;
+            border: 2px solid gray;
+            border-radius: 5px;
+            background-color: rgb(48, 39, 39);
+            margin: 100px auto;
+        }
+
+        #main input {
+            width: 90%;
+            border: 1px solid white;
+            border-radius: 3px;
+            background-color: rgb(48, 39, 39);
+            padding: 10px;
+            margin: 10px;
+            color: white;
+            font-weight: 800;
+
+        }
+
+        .btn{
+            width: 92px;
+            margin: 2px;
+            height: 40px;
+            font-weight: 800;
+            border-radius: 5px;
+        }
+        .btn:hover{
+            background-color: lightgray;
+            cursor: pointer;
+        }
+        .btn:active{
+            background-color: white;
+        }
+
+
+
+        #equal{
+            background-color: rgb(231, 164, 176);
+        }
+        #equal:hover{
+            background-color: lightgray;
+        }
+        #equal:active{
+            background-color: white;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div>
+            <input type="text" placeholder="0" id="result" readonly>
+        </div>
+
+        <div>
+            <button class="btn" onclick="getNumber('7')">7</button>
+            <button class="btn" onclick="getNumber('8')">8</button>
+            <button class="btn" onclick="getNumber('9')">9</button>
+            <button class="btn" onclick="getNumber('*');twoSigns()">X</button>
+
+        </div>
+        <div>
+            <button class="btn" onclick="getNumber('4')">4</button>
+            <button class="btn" onclick="getNumber('5')">5</button>
+            <button class="btn" onclick="getNumber('6')">6</button>
+            <button class="btn" onclick="getNumber('/');twoSigns()">/</button>
+
+        </div>
+        <div>
+            <button class="btn" onclick="getNumber('1')">1</button>
+            <button class="btn" onclick="getNumber('2')">2</button>
+            <button class="btn" onclick="getNumber('3')">3</button>
+            <button class="btn" onclick="getNumber('-');twoSigns()">-</button>
+
+        </div>
+
+        <div>
+            <button class="btn" onclick="clearrslt()">C</button>
+            <button class="btn" onclick="getNumber('0')">0</button>
+            <button class="btn" onclick="getNumber('+');twoSigns()">+</button>
+            <button class="btn" onclick="equalto()" id="equal">=</button>
+
+
+
+        </div>
+    </div>
+</body>
+
+<script>
+    
+    function getNumber(num){
+        let result = document.getElementById('result');
+        result.value += num;
+    }
+
+    function clearrslt(){
+        let result = document.getElementById('result');
+        result.value = ''
+    }
+    function equalto(){
+        let result = document.getElementById('result');
+        // console.log(result.value)
+        result.value=eval(result.value);
+    }
+
+    function twoSigns(){
+        let result = document.getElementById('result');
+        for(var i = 0;i < result.value.length ;i++){
+            if (result.value.slice(i,i+2) === '++'||result.value.slice(i,i+2) === '--'||result.value.slice(i,i+2) === '**'||result.value.slice(i,i+2) === '//'||result.value.slice(i,i+2) === '*+'||result.value.slice(i,i+2) === '*-'||result.value.slice(i,i+2) === '*/'||result.value.slice(i,i+2) === '**'||
+            result.value.slice(i,i+2) === '+*'||result.value.slice(i,i+2) === '+/'||result.value.slice(i,i+2) === '+-'||result.value.slice(i,i+2) === '-+'||result.value.slice(i,i+2) === '-/'||result.value.slice(i,i+2) === '-*'||
+            result.value.slice(i,i+2) === '/*'||result.value.slice(i,i+2) === '/+'||result.value.slice(i,i+2) === '/-'
+            ){
+                alert("Cannot Use two consecutive operators");
+                result.value = result.value.slice(0,-1);
+            }
+        }
+    }
+</script>
+
+</html>

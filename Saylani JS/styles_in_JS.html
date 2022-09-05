@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styles in Js</title>
+    <style>
+        .hidden{
+            display: none;
+        }
+        .bigimage{
+            width: 500px;
+            height: 500px;
+        }
+        /* .bigimage{
+            width: 1000px;
+            height: 1000px;
+        } */
+    </style>
+</head>
+<body>
+    <!-- <img id="car" class="image" onclick="hiddenImg()" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCWYSD_5SnrKIPWrqMCPbqBnSead52Wn__qEQXn795&s" alt=""> -->
+
+    <!-- <img id="frstImage" onmouseover="changeImage('frstImage','car2.jpg')" onmouseout="changeImage('frstImage','car1.jpg')" src="car1.jpg" alt=""> -->
+
+
+    <!-- <img id="frstImage" onmouseover="changeImage()" onmouseout="changeoutImage()" src="car2.jpg" alt=""> -->
+
+
+    <p id="para" onclick="changeFont()">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum pariatur molestiae sint deleniti, maxime earum. Ullam et totam cum earum explicabo ex! Architecto sequi excepturi veniam tempore, omnis atque aut ipsa voluptatem necessitatibus nulla!</p>
+
+
+</body>
+
+<script>
+    // jab pehlay sy koi class di hui ho to phr hm jab nayi class de rahay hoty hain to usky liye += ka sign use krty hain or class name k start mn aik space bhi dety hain.
+
+    // function hiddenImg(){
+    //     var img = document.getElementById('car');
+    //     img.className += ' hidden';
+    // }
+
+
+    // function changeImage(){
+    //     var img = document.getElementById('frstImage');
+    //     img.src = 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2019-honda-civic-sedan-1558453497.jpg?crop=1xw:0.9997727789138833xh;center,top&resize=480:*';
+    //     img.className = 'bigimage';
+        
+    // }
+    // function changeToPreImg(){
+    //     var img = document.getElementById('frstImage');
+    //     img.src = 'https://cdn.motor1.com/images/mgl/6ZZp9r/s1/most-expensive-cars-in-the-world-2022.jpg'
+    // }
+
+    // ab isi change image walay function ko hm single function mn parameters de kr chalayengay
+
+    // function changeImage(id,src){
+    //     var image = document.getElementById(id);
+    //     image.src = src;
+    // }
+
+    // jese hm ne src change kiya hai wese hi hm link bhi change kr skty hain link.href = 'https:// hasdahsdakjs.com' is tarah
+
+    function changeImage(){
+        var image = document.getElementById('frstImage');
+        image.style.width = '100%';
+    }
+    function changeoutImage(){
+        var image = document.getElementById('frstImage');
+        image.style.width = '500px';
+    }
+
+
+    function changeFont(){
+        var para = document.getElementById('para');
+        para.style.fontSize = '2em';
+    }
+
+    // srf float ki property direct apply nahi kr skty usky liye pehly sath cssFloat lagana parta hai
+
+
+</script>
+</html>

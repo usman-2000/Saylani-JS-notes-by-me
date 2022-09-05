@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENTS LINKS</title>
+</head>
+<body>
+    <a href="#" onclick="alert('HELLO WORLD')">Click me</a> <br>
+    <a href="#" onclick="var a = 23; document.write(a);">Number is:</a><br>
+    <a href="#" onclick="greet();">greetings</a><br>
+    <a href="#" onclick="add();">ADD</a><br>
+    <a href="#" onclick="add_arguments(4,5);">ADD Arguments</a><br>
+    <a href="#" onclick="display_input(prompt('Enter Your Name:'));">DISPLAY NAME</a><br>
+
+    <!-- Buttons -->
+
+    <button onclick="greet()">Greetings</button><br>
+
+
+
+
+
+</body>
+
+    <script>
+        function greet(){
+            alert("Salam Usman");
+        }
+
+        function add(){
+            var b = 2+3;
+            document.write(b);
+        }
+
+        function add_arguments(num1,num2){
+            document.write(num1+num2);
+        }
+
+        function display_input(name){
+            document.write(name);
+        }
+    </script>
+</html>

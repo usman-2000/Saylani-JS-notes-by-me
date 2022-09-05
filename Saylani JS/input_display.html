@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input display</title>
+    <style>
+        #main{
+            background-color: brown;
+            width: 550px;
+            height: 500px;
+            margin: 100px auto;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            border-bottom: 2px solid black;
+            box-shadow: 5px 5px 10px gray;
+        }
+        #input_field{
+            width: 300px;
+            height: 20px;
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid black;
+            margin-bottom: 10px;
+        }
+        .btn{
+            width: 80px;
+            height: 30px;
+            font-weight: 800;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: white;
+            margin-top: 3px;
+        }
+        .btn:hover{
+            background-color: rgb(199, 159, 159);
+        }
+        #nested{
+            text-align: center;
+            margin-top: 20px;
+        }
+        #spacebar{
+            width: 247.5px;
+            /* background-color: rgb(160, 160, 160); */
+        }
+        #para{
+            margin-top: 15px;
+            border-radius: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1>Type Anything</h1>
+        <input type="text" id="input_field" readonly>
+        <button class="btn" id="enter" onclick="showText()">Enter</button>
+
+        <div id="nested">
+            <button class="btn" onClick="keyValue('A')">A</button>
+            <button class="btn" onClick="keyValue('B')">B</button>
+            <button class="btn" onClick="keyValue('C')">C</button>
+            <button class="btn" onClick="keyValue('D')">D</button>
+            <button class="btn" onClick="keyValue('E')">E</button>
+            <button class="btn" onClick="keyValue('F')">F</button>
+            <button class="btn" onClick="keyValue('G')">G</button>
+            <button class="btn" onClick="keyValue('H')">H</button>
+            <button class="btn" onClick="keyValue('I')">I</button>
+            <button class="btn" onClick="keyValue('J')">J</button>
+            <button class="btn" onClick="keyValue('K')">K</button>
+            <button class="btn" onClick="keyValue('L')">L</button>
+            <button class="btn" onClick="keyValue('M')">M</button>
+            <button class="btn" onClick="keyValue('N')">N</button>
+            <button class="btn" onClick="keyValue('O')">O</button>
+            <button class="btn" onClick="keyValue('P')">P</button>
+            <button class="btn" onClick="keyValue('Q')">Q</button>
+            <button class="btn" onClick="keyValue('R')">R</button>
+            <button class="btn" onClick="keyValue('S')">S</button>
+            <button class="btn" onClick="keyValue('T')">T</button>
+            <button class="btn" onClick="keyValue('U')">U</button>
+            <button class="btn" onClick="keyValue('V')">V</button>
+            <button class="btn" onClick="keyValue('W')">W</button>
+            <button class="btn" onClick="keyValue('X')">X</button>
+            <button class="btn" onClick="keyValue('Y')">Y</button>
+            <button class="btn" onClick="keyValue('Z')">Z</button>
+            <button class="btn" id="spacebar" onClick="keyValue(' ')">Space</button>
+            <button class="btn" onclick="removeKeyValue()">Clear</button>
+            <button class="btn" onClick="backSpace()">B space</button>
+
+
+
+        </div>
+        <textarea id="para" cols="50" rows="5"></textarea>
+    </div>
+</body>
+
+
+<script>
+    function keyValue(key){
+        var result = document.getElementById('input_field');
+        result.value += key;
+    }
+    function removeKeyValue(){
+        var result = document.getElementById('input_field');
+        result.value ='';
+        para.innerHTML = ''
+    }
+
+    function showText(){
+        var result = document.getElementById('input_field');
+        // console.log(result.value)
+        var para = document.getElementById('para');
+        para.innerHTML += result.value;
+    }
+    function backSpace(){
+        var result = document.getElementById('input_field');
+        var len = result.value.length;
+        result.value = result.value.slice(0,(len-1));
+    }
+</script>
+</html>
