@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom 2</title>
+    <style>
+        .main{
+            display: flex;
+        }
+        #cart{
+            background-color: yellow;
+            width: 300px;
+            height: 500px;
+            margin-left: 50px;
+            /* padding: 20px; */
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <p>This is first paragraph</p>
+    <p>This is second Paragraph</p>
+    <p>This is third Paragraph</p>
+
+    <button onclick="getElements()">Update</button> -->
+
+
+
+    <div class="main">
+        <div id="products">
+            <img id="prod_img"
+                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2hvZXN8ZW58MHx8MHx8&w=1000&q=80"
+                width="200px" alt="">
+            <h4 id="name">Nike Air</h4>
+            <h4 id="price">price: 3000</h4>
+            <h4>Quantity:<input id="inputVal" type="number"></h4>
+
+            <button id="btn" onclick="addToCart()">Add to Cart</button>
+        </div>
+
+        <div id="cart">
+
+            <h1>Cart</h1>
+            <hr>
+            <img id="prod_img_cart"
+                src=""
+                width="200px" alt="">
+            <h4 id="name_cart"></h4>
+            <h4 id="price_cart"></h4>
+            <h4 id="inputVal_cart"></h4>
+        </div>
+    </div>
+</body>
+
+<script>
+    // function getElements(){
+    //     var para = document.getElementsByTagName('p');
+    //     para[2].innerHTML = "This is updated"
+    // }
+
+
+    function addToCart() {
+        var prod_img = document.getElementById("prod_img");
+        var name = document.getElementById("name");
+        var price = document.getElementById("price");
+        var inputVal = document.getElementById("inputVal")
+
+
+        var prod_img_cart = document.getElementById("prod_img_cart")
+        var name_cart = document.getElementById("name_cart")
+        var price_cart = document.getElementById("price_cart");
+        var inputVal_cart = document.getElementById("inputVal_cart")
+
+        prod_img_cart.src = "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2hvZXN8ZW58MHx8MHx8&w=1000&q=80";
+        name_cart.innerHTML = "Nike Air";
+        price_cart.innerHTML = "price: 3000";
+        inputVal_cart.innerHTML = "Quantity:"+inputVal.value
+
+    }
+</script>
+
+</html>
