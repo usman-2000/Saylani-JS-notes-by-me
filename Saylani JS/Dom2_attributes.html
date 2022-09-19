@@ -1,0 +1,53 @@
+<!-- 
+
+DOM ATTRIBUTES
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Attributes</title>
+    <style>
+        .para{
+            background-color: orange;
+        }
+        .blue{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p class="para" id="p1">This is paragraph</p>
+</body>
+
+<script>
+
+    // is tareekay sy ham koi bhi attribute dekh skty hain k mojod hai ya nahi
+    var target = document.getElementById("p1");
+
+    // if(target.hasAttribute("class")){
+    //     alert("Available");
+    // }else{
+    //     alert("Not Available");
+    // }
+
+
+    // is sy ham us attribute ki value lay skty hain
+    console.log(target.getAttribute("class"));
+
+
+    // is tareekay sy ham koi bhi attribute day skty hain
+    target.setAttribute("class","blue")
+
+
+    // is tareekay sy ham sab attributes ka pata lagaa skty hain
+    console.log(target.attributes)
+
+    console.log(target.attributes[1].nodeName)
+
+</script>
+</html>
